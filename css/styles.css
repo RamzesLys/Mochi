@@ -47,7 +47,7 @@ a {
   padding: 0 15px;
 }
 
-header {
+.header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -62,6 +62,46 @@ header {
   z-index: 2;
   width: 7em;
 }
+
+.header__menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding-top: 1em;
+  column-gap: 1.5em;
+}
+
+.header__hamb {
+  width: 3em;
+  height: 3em;
+  position: relative;
+}
+
+.header__hamb span {
+  width: 3em;
+  height: 0.2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #FFD0E1;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.header__hamb span:nth-of-type(2) {
+  top: calc(50% - 0.5em);
+}
+
+.header__hamb span:nth-of-type(3) {
+  top: calc(50% + 0.5em);
+}
+
+/* .header__menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+} */
 
 .header__nav, .header__social {
   display: flex;
