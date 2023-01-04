@@ -59,7 +59,7 @@ a {
 }
 
 .header__logo {
-  z-index: 2;
+  z-index: 5;
   width: 7em;
 }
 
@@ -79,6 +79,8 @@ a {
   position: relative;
   z-index: 5;
   border: 2px white solid;
+  overflow: hidden;
+  /* display: none; */
 }
 
 .header__hamb span {
@@ -90,7 +92,7 @@ a {
   background-color: #FFD0E1;
   transform: translate(-50%, -50%);
   cursor: pointer;
-  /* display: none; */
+  transition: all 0.5s;
 }
 
 .header__hamb span:nth-of-type(2) {
@@ -102,29 +104,58 @@ a {
 }
 
 .header__hamb.active span:first-of-type {
-  opacity: 0;
+  opacity: 0.7;
+  transform: translateX(+50%);
 }
 
 .header__hamb.active span:nth-of-type(2) {
   top: 50%;
   transform: translate(-50%, -50%) rotate(45deg);
+  background-color: #F57BA7;
 }
 
 .header__hamb.active span:nth-of-type(3) {
   top: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
+  background-color: #F57BA7;
 }
 
-
-
-
 .header__menu-hidden {
-  position: fixed;
+  /* display: none; */
+  position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  left: -10%;
+  width: 120%;
+  height: 100vh;
   transform: translateX(-100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__menu-hidden.active {
+  transform: translate(0);
+  transition: all 1s;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 4;
+}
+
+.header__menu-hidden .header__nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.header__menu-hidden .header__nav a {
+  font-size: 4em;
+  gap: 3em;
+}
+
+.header__menu-hidden .header__social {
+  column-gap: 3em;
 }
 
 .header__nav, .header__social {
@@ -275,6 +306,7 @@ a {
   max-width: 100%;
   margin: 0 auto;
   margin-bottom: 2em;
+  padding: 0 1em;
 }
 
 .desert__title::after, .desert__title::before {
@@ -543,4 +575,45 @@ a {
   transition: all 0.4s;
 }
 
+
+/* STICKY */
+
+.sticky__block {
+  position: fixed;
+  width: 3em;
+  height: 300px;
+  /* background-color: #000000; */
+  bottom: 7em;
+  right: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.sticky__btn-hidden {
+  border-radius: 2em;
+  /* background-color: #968095; */
+  width: 3em;
+  height: 3em;
+ 
+}
+
+.sticky__btn-hidden:first-of-type {
+  background-image: url(../img/icon/icon-instagram-sticky.svg);
+  background-repeat: no-repeat;
+}
+
+.sticky__btn-hidden:nth-of-type(2) {
+  background-image: url(../img/icon/icon-viber-sticky.svg);
+  background-repeat: no-repeat;
+}
+
+.sticky__btn-hidden:nth-of-type(3) {
+  background-image: url(../img/icon/icon-phone-sticky.svg);
+  background-repeat: no-repeat;
+}
+
+.
 
